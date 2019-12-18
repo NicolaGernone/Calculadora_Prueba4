@@ -13,7 +13,7 @@ public class CalculatorServices {
 	 * @param form
 	 * @return
 	 */
-	public int add(OperationBean form){
+	public float add(OperationBean form){
         return form.getA() + form.getB();
     }
 	
@@ -22,7 +22,7 @@ public class CalculatorServices {
 	 * @param form
 	 * @return
 	 */
-    public int subtract(OperationBean form){
+    public float subtract(OperationBean form){
         return form.getA() - form.getB();
     }
 }

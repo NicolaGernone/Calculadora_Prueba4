@@ -3,8 +3,8 @@ package com.apache.maven.Calculadora.bean;
 public class OperationBean {
 	
 	private String operation;
-    private int a;
-    private int b;
+    private float a;
+    private float b;
     
     public OperationBean() {
     	
@@ -14,7 +14,7 @@ public class OperationBean {
         this.operation = operation;
     }
 
-    public OperationBean(int a, int b) {
+    public OperationBean(float a, float b) {
         this.a = a;
         this.b = b;
     }
@@ -27,19 +27,19 @@ public class OperationBean {
 		this.operation = operation;
 	}
 
-	public int getA() {
+	public float getA() {
 		return a;
 	}
 
-	public void setA(int a) {
+	public void setA(float a) {
 		this.a = a;
 	}
 
-	public int getB() {
+	public float getB() {
 		return b;
 	}
 
-	public void setB(int b) {
+	public void setB(float b) {
 		this.b = b;
 	}
 
