@@ -1,12 +1,14 @@
 package com.apache.maven.Calculadora.service;
 
-import org.springframework.stereotype.Service;
-
 import com.apache.maven.Calculadora.bean.OperationBean;
 
-@Service
-public class CalculatorServices {
+import io.corp.calculator.TracerImpl;
 
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class CalculatorServices extends TracerImpl {
 	
 	/**
 	 * servicio que devuelve la suma de dos valores
@@ -14,7 +16,13 @@ public class CalculatorServices {
 	 * @return
 	 */
 	public float add(OperationBean form){
-        return form.getA() + form.getB();
+        try {
+			return form.getA() + form.getB();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			trace(e);
+			return 0;
+		}
     }
 	
 	/**
@@ -23,6 +31,13 @@ public class CalculatorServices {
 	 * @return
 	 */
     public float subtract(OperationBean form){
-        return form.getA() - form.getB();
+    	try {
+			return form.getA() - form.getB();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			trace(e);
+			return 0;
+			
+		}
     }
 }
