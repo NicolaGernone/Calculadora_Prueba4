@@ -3,11 +3,12 @@ package com.apache.maven.Calculadora.controller;
 import com.apache.maven.Calculadora.service.CalculatorServices;
 import com.apache.maven.Calculadora.bean.OperationBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-public class Controller {
+@Controller
+public class ControllerCalculator {
 	
 	//inicializo el bean
 	OperationBean form = new OperationBean();
