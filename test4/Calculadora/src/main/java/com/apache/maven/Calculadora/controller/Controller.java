@@ -16,12 +16,40 @@ public class Controller {
 	@Autowired
 	private CalculatorServices calculatorServices;
 	
+	/**
+	 * map del servicio calculator
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/calculator")
-    public String getCalculatorPage(Model model){
+    private String getCalculatorPage(Model model){
         model.addAttribute("operationBean",form);
         return "calculator";
 	}
 	
+	/**
+	 * servicio map para suma
+	 * @param form
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/calculator", params="add", method = RequestMethod.POST)
+    private String add(@ModelAttribute("operationBean")  OperationBean form, Model model ){
+        model.addAttribute("result", calculatorServices.add(form));
+        return "calculator";
+    }
+	
+	/**
+	 * servicio map para subtracción
+	 * @param form
+	 * @param model
+	 * @return
+	 */
+    @RequestMapping(value="/calculator", params="subtract", method = RequestMethod.POST)
+    private String subtract(@ModelAttribute("operationBean")  OperationBean form, Model model ){
+        model.addAttribute("result", calculatorServices.subtract(form));
+        return "calculator";
+    }
 	
 
 }
